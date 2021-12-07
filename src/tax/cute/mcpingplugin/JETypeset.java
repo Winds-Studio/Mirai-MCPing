@@ -83,12 +83,12 @@ public class JETypeset {
         if (new File(path).isFile()) return;
         String text =
                 "\n%favicon" +
-                        "\n[ 描述 ] %description" +
-                        "\n[ 版本 ] %version_name(%version_protocol)" +
-                        "\n[ 人数 ] %online_players/%max_players" +
-                        "\n[ 延迟 ] %delayms" +
-                        "\n[ 类型 ] %type" +
-                        "\n[ Mod数量 ] %mod_count";
+                        "\n鎻忚堪 | %description" +
+                        "\n鐗堟湰 | %version_name(%version_protocol)" +
+                        "\n浜烘暟 | %online_players/%max_players" +
+                        "\n寤惰繜 | %delayms" +
+                        "\n绫诲瀷 | %type" +
+                        "\nMod鏁伴噺 | %mod_count";
         OutputStream out = new FileOutputStream(path);
         out.write(text.getBytes());
         out.flush();
