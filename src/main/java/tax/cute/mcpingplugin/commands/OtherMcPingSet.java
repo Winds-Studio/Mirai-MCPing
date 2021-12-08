@@ -29,9 +29,9 @@ public class OtherMcPingSet extends CommandModel {
             String cmd = args[1].contentToString();
             try {
                 plugin.config.setCmd(cmd);
-                group.sendMessage("ÒÑ¸ü¸ÄÃüÁîÎª" + cmd);
+                group.sendMessage("å·²æ›´æ”¹å‘½ä»¤ä¸º" + cmd);
             } catch (IOException e) {
-                group.sendMessage("¶ÁĞ´ÅäÖÃÊ±³öÏÖÒì³£" + e);
+                group.sendMessage("è¯»å†™é…ç½®æ—¶å‡ºç°å¼‚å¸¸" + e);
             }
         }else if (sender instanceof CommandSenderFriend) {
             CommandSenderFriend senderFriend = (CommandSenderFriend)sender;
@@ -39,9 +39,9 @@ public class OtherMcPingSet extends CommandModel {
             String cmd = args[1].contentToString();
             try {
                 plugin.config.setCmd(cmd);
-                friend.sendMessage("ÒÑ¸ü¸ÄÃüÁîÎª" + cmd);
+                friend.sendMessage("å·²æ›´æ”¹å‘½ä»¤ä¸º" + cmd);
             } catch (IOException e) {
-                friend.sendMessage("¶ÁĞ´ÅäÖÃÊ±³öÏÖÒì³£" + e);
+                friend.sendMessage("è¯»å†™é…ç½®æ—¶å‡ºç°å¼‚å¸¸" + e);
             }
         }
     }

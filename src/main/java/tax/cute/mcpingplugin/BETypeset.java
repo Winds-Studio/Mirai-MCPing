@@ -48,13 +48,13 @@ public class BETypeset {
     public static void createTypesetFile(String path) throws IOException{
         if(new File(path).isFile()) return;
         String text =
-                "[ 描述 ] %description" +
-                        "\n[ 版本 ] %version(%protocol_num)" +
-                        "\n[ 人数 ] %online_players/%max_players" +
-                        "\n[ 延迟 ] %delayms" +
-                        "\n[ 类型 ] %type" +
-                        "\n[ 默认模式 ] %default_mode" +
-                        "\n[ 世界名称 ] %world_name"
+                "[ 鎻忚堪 ] %description" +
+                        "\n[ 鐗堟湰 ] %version(%protocol_num)" +
+                        "\n[ 浜烘暟 ] %online_players/%max_players" +
+                        "\n[ 寤惰繜 ] %delayms" +
+                        "\n[ 绫诲瀷 ] %type" +
+                        "\n[ 榛樿妯″紡 ] %default_mode" +
+                        "\n[ 涓栫晫鍚嶇О ] %world_name"
                 ;
         OutputStream out = new FileOutputStream(path);
         out.write(text.getBytes());

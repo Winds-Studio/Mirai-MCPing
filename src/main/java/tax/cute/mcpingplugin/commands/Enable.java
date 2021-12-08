@@ -30,12 +30,12 @@ public class Enable extends CommandModel {
             try {
                 if (Util.isBoolean(args[0].contentToString())) {
                     this.plugin.config.setEnable(Boolean.parseBoolean(args[0].contentToString()));
-                    group.sendMessage("ÒÑ½«enableÉèÖÃÎª" + args[0]);
+                    group.sendMessage("å·²å°†enableè®¾ç½®ä¸º" + args[0]);
                 } else {
-                    group.sendMessage("Ê¹ÓÃ·½·¨:/enable [true/false] ÆôÓÃ»ò²»ÆôÓÃ±¾²å¼ş");
+                    group.sendMessage("ä½¿ç”¨æ–¹æ³•:/enable [true/false] å¯ç”¨æˆ–ä¸å¯ç”¨æœ¬æ’ä»¶");
                 }
             } catch (IOException e) {
-                group.sendMessage("¶ÁĞ´ÅäÖÃÊ±Óöµ½ÁËÒì³£" + e);
+                group.sendMessage("è¯»å†™é…ç½®æ—¶é‡åˆ°äº†å¼‚å¸¸" + e);
             }
         }
 
@@ -46,12 +46,12 @@ public class Enable extends CommandModel {
             try {
                 if (Util.isBoolean(args[0].contentToString())) {
                     this.plugin.config.setEnable(Boolean.parseBoolean(args[0].contentToString()));
-                    friend.sendMessage("ÒÑ½«enableÉèÖÃÎª" + args[0]);
+                    friend.sendMessage("å·²å°†enableè®¾ç½®ä¸º" + args[0]);
                 } else {
-                    friend.sendMessage("Ê¹ÓÃ·½·¨:/enable [true/false] ÆôÓÃ»ò²»ÆôÓÃ±¾²å¼ş");
+                    friend.sendMessage("ä½¿ç”¨æ–¹æ³•:/enable [true/false] å¯ç”¨æˆ–ä¸å¯ç”¨æœ¬æ’ä»¶");
                 }
             } catch (IOException e) {
-                friend.sendMessage("¶ÁĞ´ÅäÖÃÊ±Óöµ½ÁËÒì³£" + e);
+                friend.sendMessage("è¯»å†™é…ç½®æ—¶é‡åˆ°äº†å¼‚å¸¸" + e);
             }
         }
     }

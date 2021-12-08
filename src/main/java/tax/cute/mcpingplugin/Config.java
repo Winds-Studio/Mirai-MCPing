@@ -36,7 +36,7 @@ public class Config {
         Map<String, Object> map = new Yaml().load(in);
         in.close();
 
-        //初始化是防止非这个类型的实例而空指针
+        //鍒濆鍖栨槸闃叉闈炶繖涓被鍨嬬殑瀹炰緥鑰岀┖鎸囬拡
         List<Long> owner = new ArrayList<>();
         if (map.get("Owner") instanceof List) {
             List<Object> list = (List<Object>) map.get("Owner");

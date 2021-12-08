@@ -34,9 +34,9 @@ public class Reload extends CommandModel {
                 JETypeset.createTypesetFile(plugin.jeTypesetFilePath);
                 plugin.JETypesetText = Util.readText(plugin.jeTypesetFilePath,"GBK");
                 plugin.BETypesetText = Util.readText(plugin.beTypesetFilePath,"GBK");
-                group.sendMessage("ÒÑÍê³ÉÖØÔØ");
+                group.sendMessage("å·²å®Œæˆé‡è½½");
             } catch (IOException e) {
-                group.sendMessage("ÖØĞÂ¼ÓÔØÅäÖÃÎÄ¼şÊ±³öÏÖÁËÒì³£\n" + e);
+                group.sendMessage("é‡æ–°åŠ è½½é…ç½®æ–‡ä»¶æ—¶å‡ºç°äº†å¼‚å¸¸\n" + e);
             }
         }else if (sender instanceof CommandSenderFriend) {
             CommandSenderFriend senderFriend = (CommandSenderFriend)sender;
@@ -46,9 +46,9 @@ public class Reload extends CommandModel {
                 plugin.config = Config.getConfig(plugin.config.getPath());
                 plugin.JETypesetText = Util.readText(plugin.jeTypesetFilePath,"GBK");
                 plugin.BETypesetText = Util.readText(plugin.beTypesetFilePath,"GBK");
-                friend.sendMessage("ÒÑÍê³ÉÖØÔØ");
+                friend.sendMessage("å·²å®Œæˆé‡è½½");
             } catch (IOException e) {
-                friend.sendMessage("ÖØĞÂ¼ÓÔØÅäÖÃÎÄ¼şÊ±³öÏÖÁËÒì³£\n" + e);
+                friend.sendMessage("é‡æ–°åŠ è½½é…ç½®æ–‡ä»¶æ—¶å‡ºç°äº†å¼‚å¸¸\n" + e);
             }
         }
     }

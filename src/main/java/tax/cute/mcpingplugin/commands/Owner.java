@@ -29,9 +29,9 @@ public class Owner extends CommandModel {
             Group group = senderGroup.getGroup();
             if (args[0].contentToString().equalsIgnoreCase("/lp")) {
                 group.sendMessage(
-                        "ÓÃ·¨:" +
-                        "\n/lp [add/remove] [qqºÅ] Ìí¼Ó»òÒÆ³ıÖ÷ÈË" +
-                                "\n/lp list ²é¿´Ö÷ÈËÁĞ±í"
+                        "ç”¨æ³•:" +
+                        "\n/lp [add/remove] [qqå·] æ·»åŠ æˆ–ç§»é™¤ä¸»äºº" +
+                                "\n/lp list æŸ¥çœ‹ä¸»äººåˆ—è¡¨"
                 );
                 return;
             }
@@ -51,7 +51,7 @@ public class Owner extends CommandModel {
                             remove(group, num);
 
                     } catch (IOException e) {
-                        group.sendMessage("¶ÁĞ´ÅäÖÃÊ±³öÏÖÁËÒì³£\n" + e);
+                        group.sendMessage("è¯»å†™é…ç½®æ—¶å‡ºç°äº†å¼‚å¸¸\n" + e);
                     }
                 }
             }
@@ -73,7 +73,7 @@ public class Owner extends CommandModel {
                             remove(friend, num);
 
                     } catch (IOException e) {
-                        friend.sendMessage("¶ÁĞ´ÅäÖÃÊ±³öÏÖÁËÒì³£\n" + e);
+                        friend.sendMessage("è¯»å†™é…ç½®æ—¶å‡ºç°äº†å¼‚å¸¸\n" + e);
                     }
                 }
             }
@@ -85,11 +85,11 @@ public class Owner extends CommandModel {
         if (sendObject instanceof Group) {
             Group group = (Group) sendObject;
             plugin.config.addOwner(qqNum);
-            group.sendMessage("ÒÑÌí¼Ó" + qqNum + "ÎªÖ÷ÈË");
+            group.sendMessage("å·²æ·»åŠ " + qqNum + "ä¸ºä¸»äºº");
         } else if (sendObject instanceof Friend) {
             Friend friend = (Friend) sendObject;
             plugin.config.addOwner(qqNum);
-            friend.sendMessage("ÒÑÌí¼Ó" + qqNum + "ÎªÖ÷ÈË");
+            friend.sendMessage("å·²æ·»åŠ " + qqNum + "ä¸ºä¸»äºº");
         }
     }
 
@@ -97,16 +97,16 @@ public class Owner extends CommandModel {
         if (sendObject instanceof Group) {
             Group group = (Group) sendObject;
             plugin.config.removeOwner(qqNum);
-            group.sendMessage(qqNum + "²»ÔÙÊÇÖ÷ÈËÁË");
+            group.sendMessage(qqNum + "ä¸å†æ˜¯ä¸»äººäº†");
         } else if (sendObject instanceof Friend) {
             Friend friend = (Friend) sendObject;
             plugin.config.removeOwner(qqNum);
-            friend.sendMessage(qqNum + "²»ÔÙÊÇÖ÷ÈËÁË");
+            friend.sendMessage(qqNum + "ä¸å†æ˜¯ä¸»äººäº†");
         }
     }
 
     private void sendList(Group group) {
-        StringBuilder sb = new StringBuilder("Ö÷ÈËÁĞ±í:\n");
+        StringBuilder sb = new StringBuilder("ä¸»äººåˆ—è¡¨:\n");
         for (Long i : plugin.config.getOwner()) {
             sb.append(i).append("\n");
         }
@@ -114,7 +114,7 @@ public class Owner extends CommandModel {
     }
 
     private void sendList(Friend friend) {
-        StringBuilder sb = new StringBuilder("Ö÷ÈËÁĞ±í:\n");
+        StringBuilder sb = new StringBuilder("ä¸»äººåˆ—è¡¨:\n");
         for (Long i : plugin.config.getOwner()) {
             sb.append(i).append("\n");
         }

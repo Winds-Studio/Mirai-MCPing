@@ -39,18 +39,18 @@ public class MCJEPingThread extends Thread {
             if (srv != null) {
                 host = srv.getSrvHost();
                 port = srv.getSrvPort();
-                group.sendMessage("¼ì²âµ½´æÔÚSrv¼ÇÂ¼ ÒÑ×Ô¶¯Ìø×ªµ½\n>>\n" + host + ":" + port);
+                group.sendMessage("æ£€æµ‹åˆ°å­˜åœ¨Srvè®°å½• å·²è‡ªåŠ¨è·³è½¬åˆ°\n>>\n" + host + ":" + port);
             }
             JETypeset typeset;
             try {
-                //»ñÈ¡ĞÅÏ¢²¢ÅÅ°æ
+                //è·å–ä¿¡æ¯å¹¶æ’ç‰ˆ
                 typeset = JETypeset.getTypeset(host, port, plugin.JETypesetText);
             } catch (Exception e) {
                 this.status = 0;
                 return;
             }
 
-            //ÊÇ·ñ·¢ËÍÍ¼±ê(Èç¹ûÒªÇó·¢ËÍµÄ»°)
+            //æ˜¯å¦å‘é€å›¾æ ‡(å¦‚æœè¦æ±‚å‘é€çš„è¯)
             if (typeset.getFavicon_bytes() != null) {
                 Image image = group.uploadImage(ExternalResource.create(typeset.getFavicon_bytes()));
                 group.sendMessage(image.plus(typeset.getMotdText()));
@@ -58,34 +58,34 @@ public class MCJEPingThread extends Thread {
                 group.sendMessage(typeset.getMotdText());
             }
 
-            //·¢ËÍModList(Èç¹ûÒªÇó·¢ËÍµÄ»°)
-            //²»´æÔÚÖ±½Ó½áÊø
+            //å‘é€ModList(å¦‚æœè¦æ±‚å‘é€çš„è¯)
+            //ä¸å­˜åœ¨ç›´æ¥ç»“æŸ
             if (typeset.getModList() == null) return;
             if (typeset.getModList().size() < 1) return;
-            //¹¹½¨ºÏ²¢×ª·¢ÁÄÌì¼ÇÂ¼
+            //æ„å»ºåˆå¹¶è½¬å‘èŠå¤©è®°å½•
             ForwardMessageBuilder builder = new ForwardMessageBuilder(group);
             List<String> modList = typeset.getModList();
             int count = 0;
             for (int i = 0; i < modList.size(); i++) {
                 count++;
                 builder.add(group.getBot().getId(), "Mod" + (i + 1), new PlainText(modList.get(i)));
-                //µÈÓÚ100²Å·¢ËÍ,³¬¹ı100·¢²»ÁË
+                //ç­‰äº100æ‰å‘é€,è¶…è¿‡100å‘ä¸äº†
                 if (count == 100) {
                     count = 0;
                     group.sendMessage(builder.build());
                     builder = new ForwardMessageBuilder(group);
                 }
                 if (count > 100) {
-                    group.sendMessage("³ÌĞòÓöµ½Á¿×ÓÒì³£,³ÌĞòÎŞ·¨¶¨Î»´ËÒì³£,ÇëÁªÏµÍâĞÇÈË");
+                    group.sendMessage("ç¨‹åºé‡åˆ°é‡å­å¼‚å¸¸,ç¨‹åºæ— æ³•å®šä½æ­¤å¼‚å¸¸,è¯·è”ç³»å¤–æ˜Ÿäºº");
                     return;
                 }
-                //´óÓÚ500Í£Ö¹·¢ËÍ,·ÀÖ¹Ë¢ÆÁ
+                //å¤§äº500åœæ­¢å‘é€,é˜²æ­¢åˆ·å±
                 if (i > 500) {
-                    group.sendMessage("ModÊıÁ¿´óÓÚ500,³öÓÚ°²È«²ßÂÔ,ÎŞ·¨²é¿´¸ü¶à(Ê²Ã´Á¿×Ó·ş»á×°500¸öMod?)");
+                    group.sendMessage("Modæ•°é‡å¤§äº500,å‡ºäºå®‰å…¨ç­–ç•¥,æ— æ³•æŸ¥çœ‹æ›´å¤š(ä»€ä¹ˆé‡å­æœä¼šè£…500ä¸ªMod?)");
                     return;
                 }
             }
-            //¼´Ê¹Ğ¡ÓÚ100,×îºóÒ²»á·¢ËÍ
+            //å³ä½¿å°äº100,æœ€åä¹Ÿä¼šå‘é€
             if (count > 0) group.sendMessage(builder.build());
             status = 1;
         }
@@ -96,19 +96,19 @@ public class MCJEPingThread extends Thread {
             if (srv != null) {
                 host = srv.getSrvHost();
                 port = srv.getSrvPort();
-                friend.sendMessage("¼ì²âµ½´æÔÚSrv¼ÇÂ¼ ÒÑ×Ô¶¯Ìø×ªµ½\n>>\n" + host + ":" + port);
+                friend.sendMessage("æ£€æµ‹åˆ°å­˜åœ¨Srvè®°å½• å·²è‡ªåŠ¨è·³è½¬åˆ°\n>>\n" + host + ":" + port);
             }
 
             JETypeset typeset;
             try {
-                //»ñÈ¡ĞÅÏ¢²¢ÅÅ°æ
+                //è·å–ä¿¡æ¯å¹¶æ’ç‰ˆ
                 typeset = JETypeset.getTypeset(host, port, plugin.JETypesetText);
             } catch (Exception e) {
                 this.status = 0;
                 return;
             }
 
-            //ÊÇ·ñ·¢ËÍÍ¼±ê(Èç¹ûÒªÇó·¢ËÍµÄ»°)
+            //æ˜¯å¦å‘é€å›¾æ ‡(å¦‚æœè¦æ±‚å‘é€çš„è¯)
             if (typeset.getFavicon_bytes() != null) {
                 Image image = friend.uploadImage(ExternalResource.create(typeset.getFavicon_bytes()));
                 friend.sendMessage(image.plus(typeset.getMotdText()));
@@ -116,34 +116,34 @@ public class MCJEPingThread extends Thread {
                 friend.sendMessage(typeset.getMotdText());
             }
 
-            //·¢ËÍModList(Èç¹ûÒªÇó·¢ËÍµÄ»°)
-            //²»´æÔÚÖ±½Ó½áÊø
+            //å‘é€ModList(å¦‚æœè¦æ±‚å‘é€çš„è¯)
+            //ä¸å­˜åœ¨ç›´æ¥ç»“æŸ
             if (typeset.getModList() == null) return;
             if (typeset.getModList().size() < 1) return;
-            //¹¹½¨ºÏ²¢×ª·¢ÁÄÌì¼ÇÂ¼
+            //æ„å»ºåˆå¹¶è½¬å‘èŠå¤©è®°å½•
             ForwardMessageBuilder builder = new ForwardMessageBuilder(friend);
             List<String> modList = typeset.getModList();
             int count = 0;
             for (int i = 0; i < modList.size(); i++) {
                 count++;
                 builder.add(friend.getBot().getId(), "Mod" + (i + 1), new PlainText(modList.get(i)));
-                //µÈÓÚ100²Å·¢ËÍ,³¬¹ı100·¢²»ÁË
+                //ç­‰äº100æ‰å‘é€,è¶…è¿‡100å‘ä¸äº†
                 if (count == 100) {
                     count = 0;
                     friend.sendMessage(builder.build());
                     builder = new ForwardMessageBuilder(friend);
                 }
                 if (count > 100) {
-                    friend.sendMessage("³ÌĞòÓöµ½Á¿×ÓÒì³£,³ÌĞòÎŞ·¨¶¨Î»´ËÒì³£,ÇëÁªÏµÍâĞÇÈË");
+                    friend.sendMessage("ç¨‹åºé‡åˆ°é‡å­å¼‚å¸¸,ç¨‹åºæ— æ³•å®šä½æ­¤å¼‚å¸¸,è¯·è”ç³»å¤–æ˜Ÿäºº");
                     return;
                 }
-                //´óÓÚ500Í£Ö¹·¢ËÍ,·ÀÖ¹Ë¢ÆÁ
+                //å¤§äº500åœæ­¢å‘é€,é˜²æ­¢åˆ·å±
                 if (i > 500) {
-                    friend.sendMessage("ModÊıÁ¿´óÓÚ500,³öÓÚ°²È«²ßÂÔ,ÎŞ·¨²é¿´¸ü¶à(Ê²Ã´Á¿×Ó·ş»á×°500¸öMod?)");
+                    friend.sendMessage("Modæ•°é‡å¤§äº500,å‡ºäºå®‰å…¨ç­–ç•¥,æ— æ³•æŸ¥çœ‹æ›´å¤š(ä»€ä¹ˆé‡å­æœä¼šè£…500ä¸ªMod?)");
                     return;
                 }
             }
-            //¼´Ê¹Ğ¡ÓÚ100,×îºóÒ²»á·¢ËÍ
+            //å³ä½¿å°äº100,æœ€åä¹Ÿä¼šå‘é€
             if (count > 0) friend.sendMessage(builder.build());
             status = 1;
         }

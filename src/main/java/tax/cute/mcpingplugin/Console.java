@@ -18,19 +18,19 @@ public class Console extends JSimpleCommand {
             switch (operation.toLowerCase()) {
                 case "add":
                     plugin.config.addOwner(args);
-                    plugin.getLogger().info("ÒÑ½« " + args + "Ìí¼ÓÎªÖ÷ÈË");
+                    plugin.getLogger().info("å·²å°† " + args + "æ·»åŠ ä¸ºä¸»äºº");
                     break;
 
                 case "remove":
                     plugin.config.removeOwner(args);
-                    plugin.getLogger().info(args + "²»ÔÙÊÇÖ÷ÈËÁË");
+                    plugin.getLogger().info(args + "ä¸å†æ˜¯ä¸»äººäº†");
                     break;
 
                 default:
                     plugin.getLogger().info("Usage:lp [add/remove/list] [qqNum]");
             }
         } catch (IOException e) {
-            plugin.getLogger().info("¶ÁĞ´ÅäÖÃÊ±³öÏÖÒì³£\n" + e);
+            plugin.getLogger().info("è¯»å†™é…ç½®æ—¶å‡ºç°å¼‚å¸¸\n" + e);
         }
     }
 
@@ -47,7 +47,7 @@ public class Console extends JSimpleCommand {
         }
 
         List<Long> owners = plugin.config.getOwner();
-        plugin.getLogger().info("Ö÷ÈË:");
+        plugin.getLogger().info("ä¸»äºº:");
         for (Long i:owners) {
             plugin.getLogger().info(String.valueOf(i));
         }

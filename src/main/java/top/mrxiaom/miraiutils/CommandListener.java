@@ -92,17 +92,17 @@ public class CommandListener extends SimpleListenerHost {
 	public void dispitchCommand(CommandSender sender, MessageChain message) {
 		String cmdRoot = null;
 		List<SingleMessage> args = new ArrayList<SingleMessage>();
-		// ±éÀúÏûÏ¢ÀïËùÓĞ·Ö¶Î
+		// éå†æ¶ˆæ¯é‡Œæ‰€æœ‰åˆ†æ®µ
 		int h = 0;
 		for (int i = 0; i < message.size(); i++) {
 			if (i >= message.size())
 				return;
 			SingleMessage s = message.get(i);
-			// i=0 Ê±±ØÎª MessageSource£¬Õâ¸ö²»ÄÜËã½ø²ÎÊıÀïÃæ£¬Ö±½ÓÌø¹ı
+			// i=0 æ—¶å¿…ä¸º MessageSourceï¼Œè¿™ä¸ªä¸èƒ½ç®—è¿›å‚æ•°é‡Œé¢ï¼Œç›´æ¥è·³è¿‡
 			if (s instanceof MessageSource) {
 				continue;
 			}
-			// Èç¹û·Ö¶ÎÊÇÆÕÍ¨ÎÄ±¾
+			// å¦‚æœåˆ†æ®µæ˜¯æ™®é€šæ–‡æœ¬
 			if (s instanceof PlainText) {
 				PlainText text = (PlainText) s;
 				String str = text.getContent();
@@ -111,46 +111,46 @@ public class CommandListener extends SimpleListenerHost {
 					cmdRoot = str.contains(" ") ? (str.split(" ").length > 0 ? str.split(" ")[0] : null) : str;
 					if (cmdRoot == null)
 						break;
-					// Èç¹û²»ÊÇÃüÁîÇ°×º¿ªÍ·µÄÃüÁî¸ùÖ±½Ó½áÊø
+					// å¦‚æœä¸æ˜¯å‘½ä»¤å‰ç¼€å¼€å¤´çš„å‘½ä»¤æ ¹ç›´æ¥ç»“æŸ
 					if (!cmdRoot.startsWith(this.prefix)) {
 						cmdRoot = null;
 						break;
 					}
-					// È¥³ıÃüÁîÇ°×º
+					// å»é™¤å‘½ä»¤å‰ç¼€
 					cmdRoot = cmdRoot.substring(this.prefix.length());
 				}
-				// Èç¹ûÕÒ²»µ½ÃüÁî¸ùÖ±½Ó½áÊø
+				// å¦‚æœæ‰¾ä¸åˆ°å‘½ä»¤æ ¹ç›´æ¥ç»“æŸ
 				if (cmdRoot == null)
 					break;
-				// ½«ËùÓĞ´ø¿Õ¸ñµÄÏûÏ¢·Ö¶Î×÷Îª²ÎÊı
+				// å°†æ‰€æœ‰å¸¦ç©ºæ ¼çš„æ¶ˆæ¯åˆ†æ®µä½œä¸ºå‚æ•°
 				if (str.contains(" ")) {
 					String[] splitText = str.split(" ");
-					// Èç¹ûÊÇÔÚ×îÇ°ÃæµÄ·Ö¶Î£¬ÔòÒªÑ¡Ôñ´Ó1¿ªÊ¼»¹ÊÇ´Ó0¿ªÊ¼
-					// ´Ó1¿ªÊ¼¿ÉÉáÆúÃüÁî¸ùÎª²ÎÊı£¬¼´ÈÃ²ÎÊıÀïÃ»ÓĞÃüÁî¸ù
+					// å¦‚æœæ˜¯åœ¨æœ€å‰é¢çš„åˆ†æ®µï¼Œåˆ™è¦é€‰æ‹©ä»1å¼€å§‹è¿˜æ˜¯ä»0å¼€å§‹
+					// ä»1å¼€å§‹å¯èˆå¼ƒå‘½ä»¤æ ¹ä¸ºå‚æ•°ï¼Œå³è®©å‚æ•°é‡Œæ²¡æœ‰å‘½ä»¤æ ¹
 					for (int j = (h == 0 ? 1 : 0); j < splitText.length; j++) {
 						args.add(new PlainText(splitText[j]));
 					}
 				} else {
-					// Ã»ÓĞ´ø¿Õ¸ñÊ±·ÇµÚÒ»¸ö·Ö¶Î²Å¼ÓÈëµ½²ÎÊıÀïÃæ
-					// ÔÚÏûÏ¢Îª³öÏÖ¡°ÎÄ×Ö+@AT+ÎÄ×Ö¡±µÈÇé¿öµÄÊ±ºò»á±»ÓÃµ½
+					// æ²¡æœ‰å¸¦ç©ºæ ¼æ—¶éç¬¬ä¸€ä¸ªåˆ†æ®µæ‰åŠ å…¥åˆ°å‚æ•°é‡Œé¢
+					// åœ¨æ¶ˆæ¯ä¸ºå‡ºç°â€œæ–‡å­—+@AT+æ–‡å­—â€ç­‰æƒ…å†µçš„æ—¶å€™ä¼šè¢«ç”¨åˆ°
 					if (h != 1) {
 						args.add(text);
 					}
 				}
 				h++;
-				// ÀÁµÃĞ´ else
+				// æ‡’å¾—å†™ else
 				continue;
 			}
 
-			// Èç¹ûÊÇÆäËûµÄÏûÏ¢·Ö¶ÎÀàĞÍ
+			// å¦‚æœæ˜¯å…¶ä»–çš„æ¶ˆæ¯åˆ†æ®µç±»å‹
 
-			// ²»ÊÇÍ·¸öµÄ·Ö¶ÎµÄÊ±ºòÅĞ¶ÏÃüÁî¸ù£¬Èç¹ûÕÒ²»µ½Ö±½ÓÏÂÒ»¸öÃüÁî
+			// ä¸æ˜¯å¤´ä¸ªçš„åˆ†æ®µçš„æ—¶å€™åˆ¤æ–­å‘½ä»¤æ ¹ï¼Œå¦‚æœæ‰¾ä¸åˆ°ç›´æ¥ä¸‹ä¸€ä¸ªå‘½ä»¤
 			if (h > 0 && cmdRoot == null)
 				break;
 
 			h++;
 
-			// ²»ÊÇÆÕÍ¨ÎÄ±¾µÄ·Ö¶ÎÍ³Ò»¼ÓÈë²ÎÊıÁĞ±í
+			// ä¸æ˜¯æ™®é€šæ–‡æœ¬çš„åˆ†æ®µç»Ÿä¸€åŠ å…¥å‚æ•°åˆ—è¡¨
 			args.add(s);
 		}
 		

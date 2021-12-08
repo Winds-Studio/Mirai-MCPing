@@ -35,11 +35,11 @@ public class BindServer extends CommandModel {
             try {
                 if (args[0].contentToString().equalsIgnoreCase("/bindServer")) {
                     group.sendMessage(
-                            "# ÓÃ·¨" +
-                                    "\n# /bindServer add [ÈººÅ] [ÃüÁî] [µØÖ·] Ìí¼ÓÒ»¸ö°ó¶¨" +
-                                    "\n# /bindServer remove [ÈººÅ] ÒÆ³ıÒ»¸ö°ó¶¨" +
-                                    "\n# /bindServer list ²é¿´°ó¶¨ÁĞ±í" +
-                                    "\n# ps:¿ÉÓÃ\"this\"´úÖ¸±¾Èº ÒÆ³ıÊ±¿ÉÓÃall´úÖ¸ËùÓĞÈº"
+                            "# ç”¨æ³•" +
+                                    "\n# /bindServer add [ç¾¤å·] [å‘½ä»¤] [åœ°å€] æ·»åŠ ä¸€ä¸ªç»‘å®š" +
+                                    "\n# /bindServer remove [ç¾¤å·] ç§»é™¤ä¸€ä¸ªç»‘å®š" +
+                                    "\n# /bindServer list æŸ¥çœ‹ç»‘å®šåˆ—è¡¨" +
+                                    "\n# ps:å¯ç”¨\"this\"ä»£æŒ‡æœ¬ç¾¤ ç§»é™¤æ—¶å¯ç”¨allä»£æŒ‡æ‰€æœ‰ç¾¤"
                     );
                     return;
                 }
@@ -47,7 +47,7 @@ public class BindServer extends CommandModel {
                 if (args[0].contentToString().equalsIgnoreCase("remove")) removeBind(args, group);
                 if (args[0].contentToString().equalsIgnoreCase("list")) getBind(group);
             } catch (IOException e) {
-                group.sendMessage("¶ÁĞ´ÅäÖÃÎÄ¼şÊ±³öÏÖÁËÒì³£\n" + e);
+                group.sendMessage("è¯»å†™é…ç½®æ–‡ä»¶æ—¶å‡ºç°äº†å¼‚å¸¸\n" + e);
             }
         }
 
@@ -57,11 +57,11 @@ public class BindServer extends CommandModel {
             try {
                 if (args[0].contentToString().equalsIgnoreCase("/bindServer")) {
                     friend.sendMessage(
-                            "# ÓÃ·¨" +
-                                    "\n# /bindServer add [ÈººÅ] [ÃüÁî] [µØÖ·] Ìí¼ÓÒ»¸ö°ó¶¨" +
-                                    "\n# /bindServer remove [ÈººÅ] ÒÆ³ıÒ»¸ö°ó¶¨" +
-                                    "\n# /bindServer list ²é¿´°ó¶¨ÁĞ±í" +
-                                    "\n# ps:¿ÉÓÃ\"this\"´úÖ¸±¾Èº ÒÆ³ıÊ±¿ÉÓÃall´úÖ¸ËùÓĞÈº"
+                            "# ç”¨æ³•" +
+                                    "\n# /bindServer add [ç¾¤å·] [å‘½ä»¤] [åœ°å€] æ·»åŠ ä¸€ä¸ªç»‘å®š" +
+                                    "\n# /bindServer remove [ç¾¤å·] ç§»é™¤ä¸€ä¸ªç»‘å®š" +
+                                    "\n# /bindServer list æŸ¥çœ‹ç»‘å®šåˆ—è¡¨" +
+                                    "\n# ps:å¯ç”¨\"this\"ä»£æŒ‡æœ¬ç¾¤ ç§»é™¤æ—¶å¯ç”¨allä»£æŒ‡æ‰€æœ‰ç¾¤"
                     );
                     return;
                 }
@@ -69,7 +69,7 @@ public class BindServer extends CommandModel {
                 if (args[0].contentToString().equalsIgnoreCase("remove")) removeBind(args, friend);
                 if (args[0].contentToString().equalsIgnoreCase("list")) getBind(friend);
             } catch (IOException e) {
-                friend.sendMessage("¶ÁĞ´ÅäÖÃÎÄ¼şÊ±³öÏÖÁËÒì³£\n" + e);
+                friend.sendMessage("è¯»å†™é…ç½®æ–‡ä»¶æ—¶å‡ºç°äº†å¼‚å¸¸\n" + e);
             }
         }
     }
@@ -78,7 +78,7 @@ public class BindServer extends CommandModel {
         if (sendObject instanceof Group) {
             Group group = (Group) sendObject;
             if (args.length != 4) {
-                group.sendMessage("²ÎÊıÊäÈëÓĞÎó");
+                group.sendMessage("å‚æ•°è¾“å…¥æœ‰è¯¯");
                 return;
             }
             long num = 0;
@@ -87,32 +87,32 @@ public class BindServer extends CommandModel {
             else if (Util.isNum(args[1].contentToString()))
                 num = Long.parseLong(args[1].contentToString());
             else
-                group.sendMessage("ÒâÍâµÄÊı¾İÀàĞÍ(ĞèÒªÕûÊı)");
+                group.sendMessage("æ„å¤–çš„æ•°æ®ç±»å‹(éœ€è¦æ•´æ•°)");
 
             String cmd = args[2].contentToString();
             String host = args[3].contentToString();
             if (plugin.config.addBindServer(new Server(num, cmd, host)))
-                group.sendMessage("°ó¶¨³É¹¦ ¿ÉÔÚ¸ÃÈº·¢ËÍ " + cmd + " »ñÈ¡" + host + "µÄĞÅÏ¢");
-            else group.sendMessage("°ó¶¨Ê§°Ü ´ËÈºÒÑ°ó¶¨");
+                group.sendMessage("ç»‘å®šæˆåŠŸ å¯åœ¨è¯¥ç¾¤å‘é€ " + cmd + " è·å–" + host + "çš„ä¿¡æ¯");
+            else group.sendMessage("ç»‘å®šå¤±è´¥ æ­¤ç¾¤å·²ç»‘å®š");
         } else if (sendObject instanceof Friend) {
             Friend friend = (Friend) sendObject;
             if (args.length != 4) {
-                friend.sendMessage("²ÎÊıÊäÈëÓĞÎó");
+                friend.sendMessage("å‚æ•°è¾“å…¥æœ‰è¯¯");
                 return;
             }
             long num;
             if (Util.isNum(args[1].contentToString()))
                 num = Long.parseLong(args[1].contentToString());
             else {
-                friend.sendMessage("ÒâÍâµÄÊı¾İÀàĞÍ(ĞèÒªÕûÊı)");
+                friend.sendMessage("æ„å¤–çš„æ•°æ®ç±»å‹(éœ€è¦æ•´æ•°)");
                 return;
             }
 
             String cmd = args[2].contentToString();
             String host = args[3].contentToString();
             if (plugin.config.addBindServer(new Server(num, cmd, host)))
-                friend.sendMessage("°ó¶¨³É¹¦ ¿ÉÔÚ¸ÃÈº·¢ËÍ " + cmd + " »ñÈ¡" + host + "µÄĞÅÏ¢");
-            else friend.sendMessage("°ó¶¨Ê§°Ü ´ËÈºÒÑ°ó¶¨");
+                friend.sendMessage("ç»‘å®šæˆåŠŸ å¯åœ¨è¯¥ç¾¤å‘é€ " + cmd + " è·å–" + host + "çš„ä¿¡æ¯");
+            else friend.sendMessage("ç»‘å®šå¤±è´¥ æ­¤ç¾¤å·²ç»‘å®š");
         }
     }
 
@@ -120,47 +120,47 @@ public class BindServer extends CommandModel {
         if (sendObject instanceof Group) {
             Group group = (Group) sendObject;
             if (args.length != 2) {
-                group.sendMessage("²ÎÊıÊäÈë´íÎó");
+                group.sendMessage("å‚æ•°è¾“å…¥é”™è¯¯");
                 return;
             }
             long num = -1;
             if (args[1].contentToString().equalsIgnoreCase("all")) {
-                group.sendMessage("ÒÑÇå¿Õ°ó¶¨Êı¾İ(" + plugin.config.clearBindServer() + "¸ö)");
+                group.sendMessage("å·²æ¸…ç©ºç»‘å®šæ•°æ®(" + plugin.config.clearBindServer() + "ä¸ª)");
             } else {
                 if (args[1].contentToString().equalsIgnoreCase("this"))
                     num = group.getId();
                 else if (Util.isNum(args[1].contentToString()))
                     num = Long.parseLong(args[1].contentToString());
                 else
-                    group.sendMessage("ÒâÍâµÄÊı¾İÀàĞÍ(ĞèÒªÕûÊı)");
+                    group.sendMessage("æ„å¤–çš„æ•°æ®ç±»å‹(éœ€è¦æ•´æ•°)");
 
                 if (num != -1) {
                     if (plugin.config.removeBindServer(num))
-                        group.sendMessage(num + "²»ÔÙ°ó¶¨·şÎñÆ÷");
+                        group.sendMessage(num + "ä¸å†ç»‘å®šæœåŠ¡å™¨");
                     else
-                        group.sendMessage("½â°óÊ§°Ü:´ËÈºÃ»ÓĞ°ó¶¨·şÎñÆ÷");
+                        group.sendMessage("è§£ç»‘å¤±è´¥:æ­¤ç¾¤æ²¡æœ‰ç»‘å®šæœåŠ¡å™¨");
                 }
             }
         } else if (sendObject instanceof Friend) {
             Friend friend = (Friend) sendObject;
             if (args.length != 2) {
-                friend.sendMessage("²ÎÊıÊäÈë´íÎó");
+                friend.sendMessage("å‚æ•°è¾“å…¥é”™è¯¯");
                 return;
             }
             long num = -1;
             if (args[1].contentToString().equalsIgnoreCase("all")) {
-                friend.sendMessage("ÒÑÇå¿Õ°ó¶¨Êı¾İ(" + plugin.config.clearBindServer() + "¸ö)");
+                friend.sendMessage("å·²æ¸…ç©ºç»‘å®šæ•°æ®(" + plugin.config.clearBindServer() + "ä¸ª)");
             } else {
                 if (Util.isNum(args[1].contentToString()))
                     num = Long.parseLong(args[1].contentToString());
                 else
-                    friend.sendMessage("ÒâÍâµÄÊı¾İÀàĞÍ(ĞèÒªÕûÊı)");
+                    friend.sendMessage("æ„å¤–çš„æ•°æ®ç±»å‹(éœ€è¦æ•´æ•°)");
 
                 if (num != -1) {
                     if (plugin.config.removeBindServer(num))
-                        friend.sendMessage(num + "²»ÔÙ°ó¶¨·şÎñÆ÷");
+                        friend.sendMessage(num + "ä¸å†ç»‘å®šæœåŠ¡å™¨");
                     else
-                        friend.sendMessage("½â°óÊ§°Ü:´ËÈºÃ»ÓĞ°ó¶¨·şÎñÆ÷");
+                        friend.sendMessage("è§£ç»‘å¤±è´¥:æ­¤ç¾¤æ²¡æœ‰ç»‘å®šæœåŠ¡å™¨");
                 }
             }
         }
@@ -171,7 +171,7 @@ public class BindServer extends CommandModel {
         if (sendObject instanceof Group) {
             Group group = (Group) sendObject;
             if (servers.size() < 1) {
-                group.sendMessage("Ã»ÓĞÊı¾İ");
+                group.sendMessage("æ²¡æœ‰æ•°æ®");
                 return;
             }
             ForwardMessageBuilder builder = new ForwardMessageBuilder(group);
@@ -183,23 +183,23 @@ public class BindServer extends CommandModel {
                                 "\nCmd:" + servers.get(i).getCmd() +
                                 "\nHost:" + servers.get(i).getHost()
                 ));
-                //ÇåÁãcount ·¢ËÍºÏ²¢×ª·¢ Çå¿ÕForwardMessageBuilder
+                //æ¸…é›¶count å‘é€åˆå¹¶è½¬å‘ æ¸…ç©ºForwardMessageBuilder
                 if (count == 100) {
                     count = 0;
                     group.sendMessage(builder.build());
                     builder = new ForwardMessageBuilder(group);
                 }
                 if (count > 100) {
-                    group.sendMessage("³ÌĞòÓöµ½Á¿×ÓÒì³£,³ÌĞòÎŞ·¨¶¨Î»´ËÒì³£,ÇëÁªÏµÍâĞÇÈË");
+                    group.sendMessage("ç¨‹åºé‡åˆ°é‡å­å¼‚å¸¸,ç¨‹åºæ— æ³•å®šä½æ­¤å¼‚å¸¸,è¯·è”ç³»å¤–æ˜Ÿäºº");
                     return;
                 }
             }
-            //¼´Ê¹Ã»ÉÏ°Ù,×îºóÒ²»á·¢ËÍ
+            //å³ä½¿æ²¡ä¸Šç™¾,æœ€åä¹Ÿä¼šå‘é€
             if (count > 0) group.sendMessage(builder.build());
         } else if (sendObject instanceof Friend) {
             Friend friend = (Friend) sendObject;
             if (servers.size() < 1) {
-                friend.sendMessage("Ã»ÓĞÊı¾İ");
+                friend.sendMessage("æ²¡æœ‰æ•°æ®");
                 return;
             }
             ForwardMessageBuilder builder = new ForwardMessageBuilder(friend);
@@ -211,18 +211,18 @@ public class BindServer extends CommandModel {
                                 "\nCmd:" + servers.get(i).getCmd() +
                                 "\nHost:" + servers.get(i).getHost()
                 ));
-                //ÇåÁãcount ·¢ËÍºÏ²¢×ª·¢ Çå¿ÕForwardMessageBuilder
+                //æ¸…é›¶count å‘é€åˆå¹¶è½¬å‘ æ¸…ç©ºForwardMessageBuilder
                 if (count == 100) {
                     count = 0;
                     friend.sendMessage(builder.build());
                     builder = new ForwardMessageBuilder(friend);
                 }
                 if (count > 100) {
-                    friend.sendMessage("³ÌĞòÓöµ½Á¿×ÓÒì³£,³ÌĞòÎŞ·¨¶¨Î»´ËÒì³£,ÇëÁªÏµÍâĞÇÈË");
+                    friend.sendMessage("ç¨‹åºé‡åˆ°é‡å­å¼‚å¸¸,ç¨‹åºæ— æ³•å®šä½æ­¤å¼‚å¸¸,è¯·è”ç³»å¤–æ˜Ÿäºº");
                     return;
                 }
             }
-            //¼´Ê¹Ã»ÉÏ°Ù,×îºóÒ²»á·¢ËÍ
+            //å³ä½¿æ²¡ä¸Šç™¾,æœ€åä¹Ÿä¼šå‘é€
             if (count > 0) friend.sendMessage(builder.build());
         }
     }

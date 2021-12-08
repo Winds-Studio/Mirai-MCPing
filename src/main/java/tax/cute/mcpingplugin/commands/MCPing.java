@@ -46,7 +46,7 @@ public class MCPing extends CommandModel {
                 port = -1;
             }
 
-            //ÖĞÎÄÓòÃû×ªÂë
+            //ä¸­æ–‡åŸŸåè½¬ç 
             ip = Punycode.encodeURL(ip);
 
             sendMCPing(plugin, group, ip, port);
@@ -72,7 +72,7 @@ public class MCPing extends CommandModel {
                 port = -1;
             }
 
-            //ÖĞÎÄÓòÃû×ªÂë
+            //ä¸­æ–‡åŸŸåè½¬ç 
             ip = Punycode.encodeURL(ip);
 
             sendMCPing(plugin, friend, ip, port);
@@ -93,7 +93,7 @@ public class MCPing extends CommandModel {
                 @Override
                 public void run() {
                     if (be.status == 0 && je.status == 0)
-                        group.sendMessage("²éÑ¯Ê§°Ü Çë¼ì²é·şÎñÆ÷ÊÇ·ñ¿ªÆô");
+                        group.sendMessage("æŸ¥è¯¢å¤±è´¥ è¯·æ£€æŸ¥æœåŠ¡å™¨æ˜¯å¦å¼€å¯");
                     je.stop();
                     be.stop();
                 }
@@ -111,7 +111,7 @@ public class MCPing extends CommandModel {
                 @Override
                 public void run() {
                     if (be.status == 0 && je.status == 0)
-                        friend.sendMessage("²éÑ¯Ê§°Ü Çë¼ì²é·şÎñÆ÷ÊÇ·ñ¿ªÆô");
+                        friend.sendMessage("æŸ¥è¯¢å¤±è´¥ è¯·æ£€æŸ¥æœåŠ¡å™¨æ˜¯å¦å¼€å¯");
                     je.stop();
                     be.stop();
                 }
