@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "tax.cute.mcpingplugin"
-version = "1.0-SNAPSHOT"
+version = "1.1-Beta"
 
 repositories {
     maven("https://maven.aliyun.com/repository/public")
@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.alibaba:fastjson:1.2.76")
+    implementation("com.alibaba:fastjson:1.2.79")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     // https://mvnrepository.com/artifact/org.yaml/snakeyaml
     implementation("org.yaml:snakeyaml:1.29")
