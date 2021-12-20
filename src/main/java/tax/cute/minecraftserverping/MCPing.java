@@ -178,7 +178,8 @@ public class MCPing {
 
                 }
             }
-        } catch (Error | Exception throwable) {
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return new MCPing(
