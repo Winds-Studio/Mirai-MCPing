@@ -3,9 +3,6 @@
 
 这是一个做的很屑的 [`Mirai`](https://github.com/mamoe/mirai) 机器人插件
 
-现在下载[MCPingV2.1(需自行载入库)](https://github.com/MX233/Mirai-MCPingPlugin/releases/download/v2.1/MCPingV2.1.jar) 或 
-[MCPingV2.1-lib(只需拷贝进plugins)](https://github.com/MX233/Mirai-MCPingPlugin/releases/download/v2.1/MCPingV2.1-lib.jar)
-
 本`README`适用于`MCPing2.1`
 
 # 主要功能
@@ -84,10 +81,6 @@ PS:支持`Srv`和`中文域名`
      这点非常适合服主架设在自己的玩家群方便查询
          
      ## 用到的依赖
-     [`MX233/MinecraftServerPing`](https://github.com/MX233/MinecraftServerPing/releases/tag/MinecraftServerPingV1.0) MCJEMOTD获取库
-     
-     [`MX233/MinecraftServerPing-BE`](https://github.com/MX233/MinecraftServerPing-BE) MCBEMOTD获取库
-     
      [`alibaba/fastjson`](https://github.com/alibaba/fastjson) 本插件不依赖,但协议库依赖
      
      [`TheFatCat/MiraiUtils`](https://github.com/MrXiaoM/MiraiUtils) 非常好的命令系统
