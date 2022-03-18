@@ -1,6 +1,8 @@
 # Mirai-MCPingPlugin
 用Mirai机器人获取MC服务器信息并发送
 
+# 本项目开发时本人水平有欠缺，堆了代码屎山，请等待重构
+
 这是一个做的很屑的 [`Mirai`](https://github.com/mamoe/mirai) 机器人插件
 
 本`README`适用于`MCPing2.1`
